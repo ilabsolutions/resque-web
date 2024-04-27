@@ -70,7 +70,8 @@
 
 <footer id="footer">
   <div class="container">
-    <p>Powered by <a href="http://github.com/resque/resque">Resque</a> v<%=Resque::Version%></p>
+    <% resque_version = Resque.const_defined?(:VERSION) ? Resque::VERSION : Resque::Version %>
+    <p>Powered by <a href="http://github.com/resque/resque">Resque</a> v<%= resque_version %></p>
     <p>Connected to Redis namespace <%= Resque.redis.namespace %> on <%=Resque.redis_id%></p>
   </div>
 </footer>
